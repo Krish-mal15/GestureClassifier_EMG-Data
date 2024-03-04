@@ -42,7 +42,7 @@ X_train, Xtest, Y_train, Ytest = train_test_split(X, Y, train_size=0.8, random_s
 rf = SVC(random_state=100, C=1, kernel="rbf")
 y_pred = rf.fit(X_train, Y_train).predict(Xtest)
 f1_svc = f1_score(Ytest, y_pred, average='micro')
-print("Support Vector Classifier Model Accuracy:", f1_svc)
+print("Support Vector Classifier Model Accuracy:", f1_svc * 100, "%")
 print("")
 print("")
 #ROCK PAPER SCISSORS game
@@ -84,7 +84,7 @@ testArrayRock = [[-26.0,-7.0,-6.0,-8.0,-13.0,4.0,24.0,12.0,23.0,0.0,3.0,9.0,-7.0
 testArrayScissors = [[3.0,-1.0,3.0,3.0,1.0,-14.0,-1.0,1.0,-18.0,1.0,-2.0,-1.0,-14.0,-25.0,-4.0,-4.0,43.0,4.0,1.0,0.0,7.0,6.0,3.0,6.0,3.0,3.0,1.0,2.0,-3.0,-4.0,0.0,3.0,-2.0,1.0,-6.0,-7.0,58.0,48.0,2.0,-11.0,12.0,3.0,9.0,12.0,-40.0,-63.0,-5.0,8.0,11.0,5.0,2.0,1.0,-38.0,-55.0,-1.0,6.0,-8.0,-1.0,-1.0,-4.0,5.0,-8.0,1.0,1.0]]
 testArrayPaper = [[4.0,19.0,-9.0,-7.0,-3.0,-36.0,-6.0,-23.0,3.0,-21.0,-2.0,-9.0,15.0,-23.0,-11.0,-2.0,11.0,27.0,-3.0,-12.0,-22.0,-34.0,-16.0,-2.0,-10.0,-9.0,3.0,5.0,41.0,-33.0,19.0,1.0,5.0,0.0,-2.0,-6.0,-12.0,63.0,-7.0,-3.0,-11.0,-15.0,4.0,12.0,42.0,12.0,-14.0,-20.0,1.0,29.0,-2.0,-7.0,-24.0,-22.0,-8.0,9.0,-14.0,-2.0,-3.0,-4.0,-21.0,7.0,-8.0,-12.0]]
 
-y_predicted = loaded_model.predict(testArrayRock)
+y_predicted = loaded_model.predict(testArrayScissors)
 
 predGesture = determineGesture(y_predicted)
 comp_generated_move = random.randint(0,2)
